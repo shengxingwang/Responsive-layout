@@ -1,0 +1,21 @@
+div,ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dd,img,body,html{
+  margin:0;
+  padding:0;
+}
+body{
+  font-family: STHeiti Light, SimHei!important;
+  font-size: 14px;
+  line-height: 1.428571429;
+}
+*{
+  box-sizing: border-box;
+}
+img{border:none;}
+a{text-decoration:none;}
+ul,li{list-style: none}
+.clerfix:after,.clerfix:before{
+  content:"";
+  clear: both;
+  display: table;
+  box-sizing: border-box;
+}

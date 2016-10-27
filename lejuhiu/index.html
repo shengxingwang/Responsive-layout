@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>乐聚惠生活</title>
+    <link rel="stylesheet" href="css/public.css">
+</head>
+<body>
+    <div class="top">
+        <div class="wrap">
+            <div class="logo-box">
+                <a href="javascript:;">
+                    <img src="img/logo.png">
+                </a>
+            </div>
+            <div class="top_right">
+                <p class="login_nav">
+                    <a href="javascript:;">登录</a>
+                    <a href="javascript:;">注册</a>
+                    <a href="javascript:;">购物车</a>
+                </p>
+                <div class="search_box">
+                    <input type="text" class="search" placeholder="关键字">
+                    <button>搜索</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="container">
+            <ul class="nav_list">
+                <li class="phone">
+                    <a href="javascript:;">首页</a>
+                    <i class="show" id="show"></i>
+                </li>
+                <ul class="nav2">
+                    <li class="item2">
+                        <a href="javascript:;">关于我们</a>
+                    </li>
+                    <li class="item2">
+                        <a href="javascript:;">新闻中心</a>
+                    </li>
+                    <li class="item2">
+                        <a href="javascript:;">乐聚惠商城</a>
+                    </li>
+                    <li class="item2">
+                        <a href="javascript:;">乐币商城</a>
+                    </li>
+                    <li class="item2">
+                        <a href="javascript:;">会员中心</a>
+                    </li>
+                    <li class="item2">
+                        <a href="javascript:;">活动专区</a>
+                    </li>
+                </ul>
+                <li class="nav_item">
+                    <a href="javascript:;">首页</a>
+                </li>
+                <li class="nav_item">
+                    <a href="javascript:;">关于我们</a>
+                </li>
+                <li class="nav_item">
+                    <a href="javascript:;">新闻中心</a>
+                </li>
+                <li class="nav_item">
+                    <a href="javascript:;">乐聚惠商城</a>
+                </li>
+                <li class="nav_item">
+                    <a href="javascript:;">乐币商城</a>
+                </li>
+                <li class="nav_item">
+                    <a href="javascript:;">会员中心</a>
+                </li>
+                <li class="nav_item">
+                    <a href="javascript:;">活动专区</a>
+                </li>
+                <li class="nav_more">
+                    <a href="javascript:;">更多</a>
+                    <ul class="more_list">
+                        <li>
+                            <a href="javascript:;">会员中心</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">活动专区</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        (function () {
+            var more = document.getElementById("show");
+            var  list = document.querySelector(".nav2");
+            list.flag = true;
+            more.onclick = function () {
+                if(list.flag){
+                    list.flag = false;
+                    list.style.display="block";
+                }else{
+                    list.flag = true;
+                    list.style.display="none";
+                }
+            }
+            $(".nav_more").hover(function () {
+                 $(".more_list").show();
+            },function () {
+                $(".more_list").hide();
+            })
+
+        })();
+    </script>
+    <div class="pic">
+        <div class="pic_box">
+            <ul class="pic_list">
+                <li>
+                    <img src="img/pic1.jpg">
+                </li>
+                <li>
+                    <img src="img/pic2.jpg">
+                </li>
+                <li>
+                    <img src="img/pic3.jpg">
+                </li>
+                <li>
+                    <img src="img/pic1.jpg">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        (function () {
+            var  lists = document.querySelectorAll(".pic_list li");
+            var  imgs = document.querySelectorAll(".pic_list img");
+            var lunbo = document.querySelector(".pic_list");
+            var w = 1263;
+            window.onresize = function () {
+               w = document.documentElement.clientWidth;
+                for( var i = 0;i<lists.length;i++){
+                    lists[i].style.width=w+"px";
+                }
+                if(w<767){
+                    imgs[0].src="img/spic1.jpg";
+                    imgs[1].src="img/spic2.jpg";
+                    imgs[2].src="img/spic3.jpg";
+                    imgs[3].src="img/spic1.jpg";
+                }else{
+                    imgs[0].src="img/pic1.jpg";
+                    imgs[1].src="img/pic2.jpg";
+                    imgs[2].src="img/pic3.jpg";
+                    imgs[3].src="img/pic1.jpg";
+                }
+            }
+            var x = 0;
+            var timer = setInterval(function () {
+                if(x==3){
+                    $(".pic_list").animate({marginLeft:-x*w},600,function () {
+                        x=0;
+                        $(".pic_list").css("margin-left","0px");
+                    });
+                }else{
+                    $(".pic_list").animate({marginLeft:-x*w},600);
+                }
+                x++;
+            },2000)
+        })();
+    </script>
+    <div class="main">
+        <div class="container">
+            <p class="btit">健康生态保护神</p>
+            <p class="stit">安全美味的生态晚宴  清冽甘泉的健康水源  自由清新的雨后空气</p>
+            <dl>
+                <dt>
+                    <a href="javascript">
+                        <img src="img/main1.jpg">
+                    </a>
+                </dt>
+                <dd>
+                    <h3>乐聚慧zc-‖生态仪</h3>
+                    <p><a href="javascript:;">解决食品安全，引领健康第一站！联合清华大学、中国农业科学院，五个唯一——打造中国食品安全领域的领导品牌...</a></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="javascript">
+                        <img src="img/main2.jpg">
+                    </a>
+                </dt>
+                <dd>
+                    <h3>能量净水器</h3>
+                    <p><a href="javascript:;">三大国际领先技术 符合WHO好水国际标准     中国“全民健康好水工程”指定产品    唯一能够激活细胞蛋白水通道的细胞喝的水...</a></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="javascript">
+                        <img src="img/main3.jpg">
+                    </a>
+                </dt>
+                <dd>
+                    <h3>空气净化器EH-0036G</h3>
+                    <p><a href="javascript:;">万拓中国，强势来袭！国内首创多重过滤系统（去除PM2.5）+亿级负离子释放，把森林空气带到家，轻松做氧疗...</a></p>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="news">
+        <div class="container">
+            <div class="new_box">
+                <div class="new_left">
+                    <h2 class="tit">关于我们</h2>
+                    <p class="desc">&nbsp;&nbsp;“欢乐相聚，智慧生活”，是“乐聚慧生活”的品牌口号，“民以食为天，食以安为先，”乐聚慧生活为了落实国家对解决食品安全难题的倡导，为了解决日益严重的食品危机问题，为了老百姓的生命和健康，我们致力于食品安全，安全食品，引领食品安全第一站的经营理念，求实发展，传递爱心，追求食品安全的完美，携手共建健康美好的生活。</p>
+                    <img src="img/new1.jpg">
+                </div>
+                <div class="new_right">
+                    <h2 class="tit">铁皮石斛<a class="more" href="javascript:;">More+</a></h2>
+                    <dl class="desc">
+                        <dt><img src="img/new2.png"></dt>
+                        <dd>美国朗弗罗肺笛上海新闻发布会，【乐聚慧生活】联合无锡二端健康有限公司，在绍兴饭店召开了，现在由新闻坊、新闻综合、静安新闻等多家媒体进行跟踪报道，全民的洗肺健康理念！ </dd>
+                    </dl>
+                    <ul class="txt_list">
+                        <li>
+                            <time>2016/03/09</time>
+                            <a href="javascript:;">
+                                【乐聚慧生活】端午佳节联欢会
+                            </a>
+                        </li>
+                        <li>
+                            <time>2016/03/09</time>
+                            <a href="javascript:;">
+                                【乐聚慧生活】端午佳节联欢会
+                            </a>
+                        </li>
+                        <li>
+                            <time>2016/03/09</time>
+                            <a href="javascript:;">
+                                【乐聚慧生活】端午佳节联欢会
+                            </a>
+                        </li>
+                        <li>
+                            <time>2016/03/09</time>
+                            <a href="javascript:;">
+                                【乐聚慧生活】端午佳节联欢会
+                            </a>
+                        </li>
+                        <li>
+                            <time>2016/03/09</time>
+                            <a href="javascript:;">
+                                【乐聚慧生活】端午佳节联欢会
+                            </a>
+                        </li>
+                        <li>
+                            <time>2016/03/09</time>
+                            <a href="javascript:;">
+                                【乐聚慧生活】端午佳节联欢会
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p> TEL : 400-0216-155   /    地址：上海市    /    MAIL：464286456@qq.com</p>
+        <p>copyright© All Rights Reserved. </p>
+        <p>网站在突唯阿tuweia.cn创建</p>
+    </div>
+</body>
+</html>
